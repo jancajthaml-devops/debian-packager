@@ -45,4 +45,6 @@ RUN \
     rm -rf /var/lib/{apt,dpkg,cache,log}/ && \
     :
 
+COPY --from=jancajthaml/jq /usr/local/bin/jq /usr/bin/jq
+
 ENTRYPOINT [ "/bin/true" ]
