@@ -32,6 +32,7 @@ RUN \
       ca-certificates \
       build-essential \
       wget \
+      git \
       tar \
       fakeroot \
       debhelper \
