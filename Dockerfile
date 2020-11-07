@@ -38,6 +38,7 @@ RUN \
       debhelper \
       config-package-dev \
       pkg-config \
+      dpkg-sig \
       lintian && \
     \
     apt-get clean autoclean && \
