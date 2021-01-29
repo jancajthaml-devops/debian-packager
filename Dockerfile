@@ -1,4 +1,4 @@
-# Copyright (c) 2020-2020, Jan Cajthaml <jan.cajthaml@gmail.com>
+# Copyright (c) 2020-2021, Jan Cajthaml <jan.cajthaml@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE no
 ENV LDFLAGS "-Wl,-z,-now -Wl,-z,relro"
 ENV LD_LIBRARY_PATH /usr/lib
-ENV PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
 
 RUN \
     echo "installing debian packages" && \
@@ -39,7 +38,8 @@ RUN \
       config-package-dev \
       pkg-config \
       dpkg-sig \
-      lintian && \
+      lintian \
+    && \
     \
     apt-get clean autoclean && \
     apt-get autoremove --yes && \
